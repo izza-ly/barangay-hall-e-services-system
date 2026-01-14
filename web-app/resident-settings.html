@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings</title>
+    <link rel="stylesheet" href="resident-settings.css">
+</head>
+<body>
+
+<div class="settings-container">
+    <h2>Settings</h2>
+
+
+    <div class="settings-section">
+        <h3>Change Password</h3>
+
+        <input type="password" id="currentPassword" placeholder="Current Password">
+        <input type="password" id="newPassword" placeholder="New Password">
+        <input type="password" id="confirmPassword" placeholder="Confirm New Password">
+
+        <button onclick="changePassword()">Update Password</button>
+
+        <p class="message" id="passwordMsg"></p>
+    </div>
+
+    <div class="settings-section">
+        <h3>Notifications</h3>
+
+        <div class="toggle-container">
+            <span>Enable Notifications</span>
+            <label class="switch">
+                <input type="checkbox" id="notifToggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+
+    <button class="back-btn" onclick="goBack()">Back to Dashboard</button>
+</div>
+
+<script>
+    function goBack() {
+        window.location.href = "resident-dashboard.html";
+    }
+
+    function changePassword() {
+        const newPass = document.getElementById("newPassword").value;
+        const confirmPass = document.getElementById("confirmPassword").value;
+        const msg = document.getElementById("passwordMsg");
+
+        const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+
+        if (!passwordPattern.test(newPass)) {
+            msg.textContent = "Password must meet the required format.";
+            msg.style.color = "red";
+            return;
+        }
+
+        if (newPass !== confirmPass) {
+            msg.textContent = "Passwords do not match.";
+            msg.style.color = "red";
+            return;
+        }
+
+        msg.textContent = "Password updated (demo only).";
+        msg.style.color = "green";
+    }
+</script>
+
+</body>
+</html>

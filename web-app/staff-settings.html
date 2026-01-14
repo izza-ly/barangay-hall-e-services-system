@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Barangay E-Services</title>
+    <link rel="stylesheet" href="staff-settings.css">
+</head>
+<body>
+
+<div class="settings-container">
+    <div class="settings-card">
+        <h1>Settings</h1>
+        <hr class="divider">
+
+        <section class="settings-section">
+            <h3>Change Password</h3>
+            <div class="input-group">
+                <input type="password" placeholder="Current Password">
+                <input type="password" placeholder="New Password">
+                <input type="password" placeholder="Confirm New Password">
+            </div>
+            <button class="update-btn">Update Password</button>
+        </section>
+
+        <hr class="divider">
+
+        <section class="settings-section">
+            <h3>Notifications</h3>
+            <div class="toggle-container">
+                <span>Enable Notifications</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </section>
+
+        <button class="back-btn" onclick="goBack()">Back to Dashboard</button>
+    </div>
+</div>
+
+<script>
+    function goBack() {
+        // Redirects back to your main dashboard file
+        window.location.href = "staff-dashboard.html"; 
+    }
+</script>
+
+</body>
+</html>

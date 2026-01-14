@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Certificate Request</title>
+    <link rel="stylesheet" href="certificate-request.css">
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Certificate Request</h2>
+
+    <form id="requestForm">
+
+        <label>Full Name</label>
+        <input type="text" required>
+
+        <label>Address</label>
+        <input type="text" required>
+
+        <label>Certificate Type</label>
+        <select id="certificateType" required>
+            <option value="">-- Select Certificate --</option>
+            <option value="clearance">Barangay Clearance - ₱20.00</option>
+            <option value="residency">Certificate of Residency - ₱50.00</option>
+            <option value="indigency">Certificate of Indigency - ₱20.00</option>
+        </select>
+
+        <label>Purpose of Request</label>
+        <textarea rows="4" placeholder="Enter your purpose here..." required></textarea>
+
+        <div class="requirements-box">
+            <h3>Upload Requirements</h3>
+            <div id="requirementsContainer">
+                <p class="hint">Please select a certificate type to see requirements.</p>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <button type="submit" id="submitBtn" disabled>Submit Request</button>
+            <button type="button" class="back-btn" onclick="location.href='resident-dashboard.html'">
+                Back to Dashboard
+            </button>
+        </div>
+
+    </form>
+</div>
+
+<script src="certificate-request.js"></script>
+</body>
+</html>

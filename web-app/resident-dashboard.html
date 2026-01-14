@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resident Dashboard</title>
+    <link rel="stylesheet" href="resident-dashboard.css">
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+   <div class="menu" id="menu">
+    <h4>Menu</h4>
+
+    <div class="menu-item" onclick="location.href='personal-info.html'">
+        Personal Information
+    </div>
+
+ <div class="menu-item" onclick="location.href='resident-settings.html'">
+    Settings
+</div>
+
+    <button class="menu-logout" onclick="logout()">Logout</button>
+</div>
+
+</div>
+
+<div class="dashboard-container">
+    <h2>Welcome, Resident</h2>
+    <p>Select the service you need</p>
+
+    <div class="card-container">
+
+        <div class="service-card" onclick="location.href='certificate-request.html'">
+            <h3>Request Certificate</h3>
+            <p>Barangay Clearance, Residency, Indigency</p>
+        </div>
+
+        <div class="service-card" onclick="location.href='track_request.html'">
+            <h3>Track Request</h3>
+            <p>Check status of your submitted requests</p>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function toggleMenu() {
+        document.getElementById("menu").classList.toggle("show");
+    }
+
+    function logout() {
+        const confirmLogout = confirm("Are you sure you want to log out?");
+        
+        if (confirmLogout) {
+            localStorage.removeItem("loggedInUser");
+            localStorage.removeItem("userRole");
+            window.location.href = "index.html";
+        }
+    }
+</script>
+
+</body>
+</html>

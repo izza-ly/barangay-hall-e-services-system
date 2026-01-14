@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Track Request</title>
+    <link rel="stylesheet" href="track_request.css">
+</head>
+<body>
+
+<div class="track-container">
+    <h2>Your Request History</h2>
+    <p>Here are all your submitted requests</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Purpose</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="requestTable"></tbody>
+    </table>
+
+    <button class="back-btn" onclick="location.href='resident-dashboard.html'">
+        Back to Dashboard
+    </button>
+</div>
+
+<script>
+const requests = JSON.parse(localStorage.getItem("requests")) || [];
+const table = document.getElementById("requestTable");
+
+if (requests.length === 0) {
+    table.innerHTML = `<tr><td colspan="4" style="text-align:center;">No requests found.</td></tr>`;
+} else {
+    requests.forEach(req => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${req.date}</td>
+            <td>${req.time}</td>
+            <td>${req.purpose}</td>
+            <td class="${req.status === 'Pending' ? 'pending' : 'completed'}">
+                ${req.status}
+            </td>
+        `;
+
+        table.appendChild(row);
+    });
+}
+</script>
+
+</body>
+</html>

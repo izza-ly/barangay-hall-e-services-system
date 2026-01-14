@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: #eaf6ff;
+}
+
+.topbar {
+    height: 60px;
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.topbar h2 {
+    margin-left: 20px;
+    color: #0d47a1;
+}
+
+.hamburger {
+    font-size: 26px;
+    cursor: pointer;
+    color: #0d47a1;
+}
+
+.menu-panel {
+    position: fixed;
+    top: 60px;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: white;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.menu-panel.open {
+    left: 0;
+}
+
+.menu-panel h3 {
+    color: #0d47a1;
+    margin-bottom: 20px;
+}
+
+.menu-panel ul {
+    list-style: none;
+}
+
+.menu-panel li {
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.menu-panel li:hover {
+    background: #f0f7ff;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: calc(100vh - 60px);
+}
+
+.sidebar {
+    width: 260px;
+    background: #0d47a1;
+    color: white;
+    padding: 25px;
+}
+
+.sidebar h2 {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 14px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.15);
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.main-content {
+    flex: 1;
+    padding: 40px;
+}
+
+.section {
+    display: none;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.section.active {
+    display: block;
+}
+
+.section h2 {
+    color: #0d47a1;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #0d47a1;
+    color: white;
+    padding: 14px;
+}
+
+td {
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+    background: #f5fbff;
+}
+
+button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    background: #0d47a1;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+.reject, .delete {
+    background: #e53935;
+}
+
+.add-btn {
+    background: #1e88e5;
+    margin-bottom: 15px;
+}

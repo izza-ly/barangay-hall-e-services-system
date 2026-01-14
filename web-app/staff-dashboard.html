@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Portal - Barangay E-Services</title>
+    <link rel="stylesheet" href="staff-dashboard.css">
+</head>
+<body>
+
+<div class="topbar">
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <h2>Barangay E-Services — Staff Portal</h2>
+</div>
+
+<div class="menu-panel" id="menuPanel">
+    <h3>Account</h3>
+    <ul>
+        <li onclick="showProfile()">Personal Information</li>
+        <li onclick="showSettings()">Settings</li>
+        <li onclick="logout()">Logout</li>
+    </ul>
+</div>
+
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+        <h2>Staff Portal</h2>
+        <ul>
+            <li onclick="showSection('certificates')">Certificate Requests</li>
+            <li onclick="showSection('residents')">Resident Records</li>
+            <li onclick="showSection('logs')">Activity Logs</li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+
+        <section id="certificates" class="section active">
+            <h2>Certificate Request Management</h2>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Resident</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>001</td>
+                    <td>Juan Dela Cruz</td>
+                    <td>Clearance</td>
+                    <td>Pending</td>
+                    <td>
+                        <button>Approve</button>
+                        <button class="reject">Reject</button>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="residents" class="section">
+            <h2>Resident Records</h2>
+            <button class="add-btn">+ Add Resident</button>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Contact</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>1001</td>
+                    <td>Maria Santos</td>
+                    <td>Purok 2</td>
+                    <td>09123456789</td>
+                    <td>
+                        <button>Edit</button>
+                        <button class="delete">Delete</button>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="logs" class="section">
+            <h2>Activity Logs</h2>
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>User</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>2026-01-13</td>
+                    <td>Staff1</td>
+                    <td>Approved Request #001</td>
+                </tr>
+            </table>
+        </section>
+
+    </main>
+</div>
+
+<script>
+function showSection(id) {
+    document.querySelectorAll(".section").forEach(sec => sec.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+}
+
+function toggleMenu() {
+    document.getElementById("menuPanel").classList.toggle("open");
+}
+
+function logout() {
+    if (confirm("Are you sure you want to logout?")) {
+        localStorage.clear();
+        window.location.href = "index.html";
+    }
+}
+
+function showProfile() {
+    window.location.href = "staff-personal-info.html";
+}
+
+function showSettings() {
+    window.location.href = "staff-settings.html";
+}
+</script>
+
+</body>
+</html>

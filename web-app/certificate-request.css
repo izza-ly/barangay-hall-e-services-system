@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef6fb;
+}
+
+.form-container {
+    width: 440px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+h2 {
+    text-align: center;
+    color: #0b4edb;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-top: 14px;
+}
+
+input, select, textarea {
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+}
+
+.requirements-box {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f5f9ff;
+    border-radius: 12px;
+    border: 1px solid #d6e4ff;
+}
+
+.requirements-box h3 {
+    margin-bottom: 10px;
+    color: #0b4edb;
+}
+
+.requirement {
+    margin-bottom: 12px;
+}
+
+.requirement label {
+    font-weight: normal;
+    margin-bottom: 4px;
+}
+
+input[type="file"] {
+    background: #fff;
+    padding: 6px;
+}
+
+.hint {
+    font-size: 14px;
+    color: #666;
+}
+
+.btn-group {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    width: 48%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+button.enabled {
+    background-color: #0b4edb;
+    cursor: pointer;
+}
+
+.back-btn {
+    background-color: #9e9e9e;
+    cursor: pointer;
+}
